@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Autorizador de débito de cartão</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -24,8 +24,121 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					# Autorizador
+					## de débito de cartão
+				</section>
+				<section data-markdown data-background="#FFF">
+					## Evandro Pires da Silva
+
+					* Arquiteto de soluções na Cresol Confederação
+					* Filho, afilhado e irmão de programador ( `talvez pai de programador(a) no futuro :)` )
+					* Programador desde meus 12 anos
+					* Programador Java® desde 2005
+				</section>
+				<section data-markdown data-background="red">
+					# Disclaimer
+
+					* Esta é uma apresentação pessoal, portanto não representa a visão institucional da Cresol Confederação
+					* Todas as informações aqui apresentadas são de cunho fictício e não expõe dados sensíveis da instituição e do sistema financeiro
+				</section>
+				<section data-markdown>
+					# Objetivo
+
+					* Provar o conceito de um autorizador de débito de cartão usando serverless
+					* Analisar a viabilidade de utilizar este tipo de arquitetura com Java
+				</section>
+				<section>
+					<section data-markdown>
+						## O que é um autorizador de débito de cartão?
+					</section>
+					<section data-markdown>
+						# O que é?
+
+						É o sistema que autoriza um débito em conta corrente na instituição financeira quando efetuamos um pagamento utilizando cartão nas famosas `maquininhas de cartão`
+					</section>
+					<section data-markdown>
+						# Restrições
+
+						* Deve rodar no máximo em 4 segundos
+						* Comunicação segura
+					</section>
+					<section data-markdown>
+						# Requisitos
+
+						* Disponibilidade 24/7
+						* Escalabilidade: deve escalar facilmente com a demanda
+							* Exemplo: Black Friday, Dia das mães, etc
+					</section>
+					<section data-markdown>
+						# Sequência
+
+						![](images/sequence-pos-to-authorizer.png)
+					</section>
+					<section data-markdown>
+						# Agora, falando tecnicamente...
+					</section>
+					<section data-markdown data-background="#FFF">
+						# Processo
+
+						![](images/diagram.svg)
+					</section>
+					<section data-markdown>
+						# Como foi feito?
+
+						* Java
+						* Serverless Framework
+						* IBM Cloud Functions
+							* Event Streams: Kafka no IBM Cloud
+							* Composer
+						* PostgreSQL
+					</section>
+					<section data-markdown data-background="#0a054c">
+						# Show me the code
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						# Conclusões
+					</section>
+					<section data-markdown>
+						## Teste de carga
+
+						1000 requisições divididas em 10 threads
+
+						![](images/jmeter.png)
+					</section>
+					<section data-markdown>
+						## Tempo médio das funções
+
+						![](images/funcoes_tempo_execucao.png)
+					</section>
+					<section data-markdown>
+						## Tempo de execução do orquestrador
+
+						![](images/composer_tempo_execucao.png)
+					</section>
+					<section data-markdown>
+						# Afinal, valeu a pena usar Java®?
+					</section>
+					<section data-markdown>
+						## Fatos sobre a prova de conceito
+
+						* Média de tempo de +4s
+						* 180ms de latência
+						* 75% do tempo é o orquestrador
+						* Funções em Java® rodaram com boa performance
+							* Menos de 100ms
+					</section>
+				</section>
+				<section data-markdown data-background="#FFF">
+					# Obrigado!
+
+					## Dúvidas? Perguntas?
+
+					evandro@evandropires.com.br
+					linkedin.com/in/epiresdasilva
+				</section>
 			</div>
 		</div>
 
