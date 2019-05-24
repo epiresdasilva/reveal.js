@@ -25,8 +25,8 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-markdown>
-					# Autorizador
-					## de débito de cartão
+					## Arquitetura baseada em eventos com Serverless
+					### **como testar?**
 				</section>
 				<section data-markdown data-background="#FFF">
 					## Evandro Pires da Silva
@@ -35,6 +35,14 @@
 					* Filho, afilhado e irmão de programador ( `talvez pai de programador(a) no futuro :)` )
 					* Programador desde meus 12 anos
 					* Programador Java® desde 2005
+				</section>
+				<section data-markdown data-background="#FFF">
+					## Tatiana Ribeiro Nunes
+
+					* QA Senior na Cresol Confederação
+					* Formada em Análise de Sistemas com 17 anos de experiência em Testes de Software e Qualidade
+					* Começou a carreira em 2002 na HP em Porto Alegre
+					* Atuando em diversos projetos de grande porte, com destaque em sistemas financeiros
 				</section>
 				<section data-markdown data-background="red">
 					# Disclaimer
@@ -45,8 +53,11 @@
 				<section data-markdown>
 					# Objetivo
 
-					* Provar o conceito de um autorizador de débito de cartão usando serverless
-					* Analisar a viabilidade de utilizar este tipo de arquitetura com Java
+					* Mostrar formas de garantir qualidade em aplicações baseadas em evento
+					* Demonstrar como testar cenários reais de instituição financeira
+				</section>
+				<section data-markdown data-background="#0a054c">
+					# Serverless
 				</section>
 				<section>
 					<section data-markdown>
@@ -89,60 +100,28 @@
 						* Java
 						* Serverless Framework
 						* IBM Cloud Functions
-							* Event Streams: Kafka no IBM Cloud
 							* Composer
 						* PostgreSQL
+						* BDD
+						* Cucumber com JUnit
 					</section>
 					<section data-markdown data-background="#0a054c">
 						# Show me the code
+					</section>
+					<section data-markdown data-background="#0a054c">
+						# Video do teste BDD
 					</section>
 				</section>
 				<section>
 					<section data-markdown>
 						# Conclusões
-					</section>
-					<section data-markdown>
-						## Teste de carga
 
-						1000 requisições divididas em 10 threads
-
-						![](images/jmeter.png)
-					</section>
-					<section data-markdown>
-						## Tempo médio das funções
-
-						![](images/funcoes_tempo_execucao.png)
-					</section>
-					<section data-markdown>
-						## Tempo de execução do orquestrador
-
-						![](images/composer_tempo_execucao.png)
-					</section>
-					<section data-markdown>
-						# Afinal, valeu a pena usar Java®?
-					</section>
-					<section data-markdown>
-						## Fatos sobre a prova de conceito
-
-						* Média de tempo de ~3s
-						* 180ms de latência
-						* 75% do tempo é o orquestrador
-						* Funções em Java® rodaram com boa performance
-							* Menos de 100ms
-					</section>
-					<section data-markdown>
-						## Funções em Java®
-
-						![](images/funcoes_java_1.png)
-						![](images/funcoes_java_2.png)
-						![](images/funcoes_java_3.png)						
-					</section>
-					<section data-markdown>
-						## Como viabilizar?
-
-						* Verificar o overhead do HTTP
-						* Reduzir a latência
-						* Orquetrador mais eficiente
+						* *Keep it simple!*
+						* Testes unitários
+						* Requisitos funcionais
+						* Requisitos não funcionais
+						* Relacionamento / Participação
+						* Disseminar a cultura da qualidade
 					</section>
 				</section>
 				<section data-markdown data-background="#FFF">
@@ -150,8 +129,10 @@
 
 					## Dúvidas? Perguntas?
 
-					evandro@evandropires.com.br
 					linkedin.com/in/epiresdasilva
+					linkedin.com/in/tatiana-ribeiro-nunes
+
+					github.com/epiresdasilva/debit-authorizer
 				</section>
 			</div>
 		</div>
